@@ -21,21 +21,6 @@ table = soup.find('table', class_=table_class)
 for th in table.find_all('th'):
 
     h = th.get_text()
-
-    # Remove superscripts
-    if '[' in h:
-        # Find the character
-        for i in range(len(h)):
-            if h[i] == '[':
-                
-                # Iterate through the rest of the string and check for ending charater
-                for j in range(len(len(h)-1 - i)):
-                    if h[j] == ']':
-                        break
-                    else:
-                        h.remove(h[j])
-                h.remove('[')
-
     header.append(h)
 
 # Look for table row and the table data within
